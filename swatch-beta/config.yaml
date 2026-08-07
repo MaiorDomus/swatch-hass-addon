@@ -1,11 +1,10 @@
 name: Swatch
-version: "3.1.0-2717ec6"
+version: "3.2.2-local"
 panel_icon: "mdi:palette"
 panel_title: Swatch
 slug: swatch
-description: Color detection in images to capture presense of known objects.
+description: Detects known objects by color in camera images and sustained mechanical sounds (e.g. a kitchen hood fan) from camera audio.
 url: "https://github.com/MaiorDomus/swatch"
-image: crzynik/swatch
 startup: application
 boot: auto
 webui: "http://[HOST]:[PORT:4500]/"
@@ -23,8 +22,8 @@ tmpfs: true
 full_access: false
 environment:
   CONFIG_FILE: /config/swatch.yml
-  DB_FILE: /media/swatch/swatch.db
   MEDIA_DIR: /media/swatch
+  DB_FILE: /media/swatch/swatch.db
 options: {}
 schema: {}
 arch:
