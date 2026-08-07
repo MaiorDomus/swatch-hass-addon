@@ -1,5 +1,14 @@
 # Versions
 
+## 3.2.0-local
+
+Switch to a local build instead of pulling a prebuilt image -- this fork
+isn't published to crzynik's Docker Hub, so Supervisor now builds the image
+directly on install/update from a Dockerfile that pulls in the swatch repo
+source and builds the frontend itself. Adds audio_monitors support (listens
+to a camera's RTSP audio for sustained mechanical noise, e.g. a kitchen hood
+fan) -- see the swatch repo's docs/config.md.
+
 ## 3.1.0
 
 Adjust config so no dockerfile image is needed to be kept in backups

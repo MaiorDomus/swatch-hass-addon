@@ -1,0 +1,61 @@
+# Local-build Dockerfile for the Home Assistant Supervisor add-on.
+#
+# The actual swatch application lives in a separate repo (this add-on repo
+# only ever wrapped a prebuilt image from Docker Hub before), so the first
+# stage below pulls that source in at build time instead. Change SWATCH_REPO
+# via --build-arg if you're pointing this at your own fork.
+
+FROM alpine/git:latest AS source
+ARG SWATCH_REPO=https://github.com/MaiorDomus/swatch.git
+ARG SWATCH_REF=main
+RUN git clone --depth 1 --branch ${SWATCH_REF} ${SWATCH_REPO} /src
+
+# web/pubspec.yaml pins `sdk: ">=2.17.0 <3.0.0"`, so this needs an old
+# Flutter/Dart toolchain -- a modern one (Dart 3.x+) won't satisfy that
+# constraint. Pulling the SDK directly from Google's archive rather than a
+# third-party Docker image, since versions that old aren't reliably tagged
+# on public registries.
+FROM debian:bookworm-slim AS frontend-build
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends curl ca-certificates xz-utils git \
+    && rm -rf /var/lib/apt/lists/*
+ARG FLUTTER_VERSION=3.3.10
+RUN curl -fsSL "https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}-stable.tar.xz" \
+      -o /tmp/flutter.tar.xz \
+    && tar -xf /tmp/flutter.tar.xz -C /opt \
+    && rm /tmp/flutter.tar.xz \
+    && git config --global --add safe.directory /opt/flutter
+ENV PATH="/opt/flutter/bin:${PATH}"
+COPY --from=source /src/web /web
+WORKDIR /web
+RUN flutter pub get && flutter build web
+
+FROM crzynik/swatch-nginx:latest AS nginx
+
+FROM python:3
+
+COPY --from=source /src/requirements.txt /requirements.txt
+COPY --from=source /src/requirements_dev.txt /requirements_dev.txt
+
+ENV OPENCV_VERSION="4.5.1"
+
+# ffmpeg is used to pull audio from camera RTSP streams for audio_monitors
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends ffmpeg \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip install -r requirements.txt
+
+COPY --from=nginx /usr/local/nginx/ /usr/local/nginx/
+
+WORKDIR /opt/swatch/
+
+COPY --from=source /src/swatch swatch/
+COPY --from=frontend-build /web/build/web frontend/
+COPY --from=source /src/migrations migrations/
+
+COPY --from=source /src/docker/rootfs /
+
+EXPOSE 4500
+
+CMD ["python3", "-u", "-m", "swatch"]
