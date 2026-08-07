@@ -1,5 +1,15 @@
 # Versions
 
+## 3.2.1-local
+
+Fix rebuilds silently reusing a stale checkout of the swatch repo forever --
+the Dockerfile's `git clone` step had no cache-busting, so every "Rebuild"
+after the very first install kept the exact source it cloned that first
+time, no matter what actually changed upstream since. It's now tied to
+Supervisor's own BUILD_VERSION build-arg, so bumping this version (which
+you already need to do to get Supervisor to rebuild at all) also forces a
+fresh clone.
+
 ## 3.2.0-local
 
 Switch to a local build instead of pulling a prebuilt image -- this fork

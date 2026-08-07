@@ -8,7 +8,17 @@
 FROM alpine/git:latest AS source
 ARG SWATCH_REPO=https://github.com/MaiorDomus/swatch.git
 ARG SWATCH_REF=main
-RUN git clone --depth 1 --branch ${SWATCH_REF} ${SWATCH_REPO} /src
+# Home Assistant Supervisor passes --build-arg BUILD_VERSION=<config.yaml's
+# version> on every build, including plain "Rebuild" with no other Dockerfile
+# changes. Referencing it here (even though git doesn't need it) makes this
+# RUN instruction's text differ whenever that version changes, which busts
+# Docker's layer cache for this step specifically -- without it, this clone
+# only ever runs once, on the very first build, and every later "rebuild"
+# silently reuses that same stale checkout forever, no matter what's actually
+# on the SWATCH_REF branch by then.
+ARG BUILD_VERSION=dev
+RUN echo "swatch source for add-on build ${BUILD_VERSION}" \
+    && git clone --depth 1 --branch ${SWATCH_REF} ${SWATCH_REPO} /src
 
 # web/pubspec.yaml pins `sdk: ">=2.17.0 <3.0.0"`, so this needs an old
 # Flutter/Dart toolchain -- a modern one (Dart 3.x+) won't satisfy that
