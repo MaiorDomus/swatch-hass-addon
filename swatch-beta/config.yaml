@@ -4,7 +4,7 @@ panel_icon: "mdi:palette"
 panel_title: Swatch
 slug: swatch
 description: Color detection in images to capture presense of known objects.
-url: "https://github.com/NickM-27/swatch"
+url: "https://github.com/MaiorDomus/swatch"
 image: crzynik/swatch
 startup: application
 boot: auto
