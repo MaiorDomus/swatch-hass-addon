@@ -1,5 +1,12 @@
 # Versions
 
+## 3.2.2-local
+
+Pull in latest swatch changes (per-zone live detection status on the
+dashboard). No Dockerfile changes -- this bump exists purely to trigger
+a fresh git clone of the swatch repo per the 3.2.1-local cache-busting
+fix.
+
 ## 3.2.1-local
 
 Fix rebuilds silently reusing a stale checkout of the swatch repo forever --
