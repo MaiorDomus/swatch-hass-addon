@@ -24,7 +24,7 @@ Fix resetting end time bug
 
 Objects are now tested based on bounding boxes that are created around clusters of pixels.
 
-- Release Notes: https://github.com/MaiorDomus/swatch/releases/tag/3.0.0-beta1
+- Release Notes: https://github.com/NickM-27/swatch/releases/tag/3.0.0-beta1
 
 ## 2.2.3
 
