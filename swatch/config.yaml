@@ -3,7 +3,7 @@ version: "3.2.2-local"
 panel_icon: "mdi:palette"
 panel_title: Swatch
 slug: swatch
-description: Color detection in images to capture presense of known objects.
+description: Detects known objects by color in camera images and sustained mechanical sounds (e.g. a kitchen hood fan) from camera audio.
 url: "https://github.com/MaiorDomus/swatch"
 startup: application
 boot: auto

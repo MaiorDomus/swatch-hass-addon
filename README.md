@@ -20,4 +20,4 @@ Click on the button below:
 
 Or, in your Home Assistant, navigate to _Configuration_ > _Add-ons, Backups & Supervisor_ > _Add-on Store_ > _..._ > _Repositories_ and add `https://github.com/MaiorDomus/swatch-hass-addon` to the list.
 
-Color detection in images to capture presense of known objects.
+Detects known objects by color in camera images and sustained mechanical sounds (e.g. a kitchen hood fan) from camera audio, and exposes the results to Home Assistant.
