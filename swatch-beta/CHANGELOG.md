@@ -1,5 +1,16 @@
 # Versions
 
+## 3.2.4-local
+
+Pull in latest swatch changes (fix color_lower/color_upper being
+matched against the wrong channels -- they were documented and produced
+as R,G,B but matched against the image's native BGR order with no
+reordering, so the first value gated Blue and the third gated Red;
+color configs with a real R/B split need those two swapped to keep
+matching the same color as before). No Dockerfile changes -- this bump
+exists purely to trigger a fresh git clone of the swatch repo per the
+3.2.1-local cache-busting fix.
+
 ## 3.2.3-local
 
 Pull in latest swatch changes (debounced object/zone detection --
