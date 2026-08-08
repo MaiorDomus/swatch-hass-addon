@@ -1,5 +1,15 @@
 # Versions
 
+## 3.2.6-local
+
+Pull in latest swatch changes (object detection debounce now tracks
+real elapsed time instead of counting auto_detect ticks -- fixes
+longer-than-configured false-negative stretches; morphological closing
+smooths noisy color-match blobs to raise solidity margin on small/noisy
+objects). No Dockerfile changes -- this bump exists purely to trigger a
+fresh git clone of the swatch repo per the 3.2.1-local cache-busting
+fix.
+
 ## 3.2.5-local
 
 Pull in latest swatch changes (dashboard auto-refresh with a
