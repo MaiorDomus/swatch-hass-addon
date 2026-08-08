@@ -1,5 +1,14 @@
 # Versions
 
+## 3.2.14-local
+
+New colorful filled-fan icon (coral/amber/teal) replacing the old
+single-color teal outline -- this add-on's own icon.png is already
+updated directly in this repo; this bump also pulls in the matching
+favicon/PWA icon changes from the swatch repo. No Dockerfile changes --
+this bump exists purely to trigger a fresh git clone of the swatch
+repo per the 3.2.1-local cache-busting fix.
+
 ## 3.2.13-local
 
 Pull in latest swatch changes (fix a crash when selecting text in the
