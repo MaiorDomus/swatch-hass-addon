@@ -1,5 +1,12 @@
 # Versions
 
+## 3.2.7-local
+
+Fix two Supervisor deprecation warnings: `map`'s `config:rw` is
+replaced with the `homeassistant_config` type (kept mounted at /config
+via an explicit `path`, so CONFIG_FILE doesn't need to change), and
+`armv7` is dropped from `arch` (removed by Supervisor).
+
 ## 3.2.6-local
 
 Pull in latest swatch changes (object detection debounce now tracks
