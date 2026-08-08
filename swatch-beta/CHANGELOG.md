@@ -1,5 +1,14 @@
 # Versions
 
+## 3.2.10-local
+
+Pull in latest swatch changes (fix the dashboard being unusable behind
+a reverse proxy that forces SSL -- API calls always used http://
+regardless of the page's own scheme, which browsers block as mixed
+content on an https page). No Dockerfile changes -- this bump exists
+purely to trigger a fresh git clone of the swatch repo per the
+3.2.1-local cache-busting fix.
+
 ## 3.2.9-local
 
 Pull in latest swatch changes (dashboard layout: audio monitors and
