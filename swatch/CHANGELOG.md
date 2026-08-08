@@ -1,5 +1,14 @@
 # Versions
 
+## 3.2.9-local
+
+Pull in latest swatch changes (dashboard layout: audio monitors and
+the Recent Activity table now stack full-width below the camera grid
+instead of sharing narrower grid cells; Recent Activity now shows 10
+rows instead of 5). No Dockerfile changes -- this bump exists purely
+to trigger a fresh git clone of the swatch repo per the 3.2.1-local
+cache-busting fix.
+
 ## 3.2.8-local
 
 Pull in latest swatch changes (dashboard "Recent Activity" table
