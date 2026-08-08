@@ -1,5 +1,15 @@
 # Versions
 
+## 3.2.8-local
+
+Pull in latest swatch changes (dashboard "Recent Activity" table
+showing the last 5 on/off transitions across all objects and audio
+monitors; fixed detection history retention never actually deleting
+anything -- now also prunes audio monitor history via a new
+audio_monitors retain_days setting). No Dockerfile changes -- this
+bump exists purely to trigger a fresh git clone of the swatch repo per
+the 3.2.1-local cache-busting fix.
+
 ## 3.2.7-local
 
 Fix two Supervisor deprecation warnings: `map`'s `config:rw` is
