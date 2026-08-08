@@ -1,5 +1,12 @@
 # Versions
 
+## 3.2.13-local
+
+Pull in latest swatch changes (fix a crash when selecting text in the
+highlighted config.yaml viewer). No Dockerfile changes -- this bump
+exists purely to trigger a fresh git clone of the swatch repo per the
+3.2.1-local cache-busting fix.
+
 ## 3.2.12-local
 
 Pull in latest swatch changes (syntax highlighting for the Settings
