@@ -1,5 +1,14 @@
 # Versions
 
+## 3.2.11-local
+
+Pull in latest swatch changes (camera cards now full-width, matching
+the audio monitor/activity table; Settings page now actually works and
+shows the raw config.yaml, read-only -- the sidebar link was previously
+a dead end). No Dockerfile changes -- this bump exists purely to
+trigger a fresh git clone of the swatch repo per the 3.2.1-local
+cache-busting fix.
+
 ## 3.2.10-local
 
 Pull in latest swatch changes (fix the dashboard being unusable behind
