@@ -1,5 +1,13 @@
 # Versions
 
+## 3.2.3-local
+
+Pull in latest swatch changes (debounced object/zone detection --
+fixes flickering false negatives on small/noisy objects, new per-object
+min_on_seconds/min_off_seconds config). No Dockerfile changes -- this
+bump exists purely to trigger a fresh git clone of the swatch repo per
+the 3.2.1-local cache-busting fix.
+
 ## 3.2.2-local
 
 Pull in latest swatch changes (per-zone live detection status on the
