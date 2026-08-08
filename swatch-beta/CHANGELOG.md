@@ -1,5 +1,13 @@
 # Versions
 
+## 3.2.15-local
+
+Pull in latest swatch changes (dashboard camera snapshots no longer
+crop the top/bottom off -- fit the whole frame with bars on the sides
+instead). No Dockerfile changes -- this bump exists purely to trigger
+a fresh git clone of the swatch repo per the 3.2.1-local cache-busting
+fix.
+
 ## 3.2.14-local
 
 New colorful filled-fan icon (coral/amber/teal) replacing the old
