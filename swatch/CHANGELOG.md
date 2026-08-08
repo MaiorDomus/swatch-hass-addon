@@ -1,5 +1,12 @@
 # Versions
 
+## 3.2.5-local
+
+Pull in latest swatch changes (dashboard auto-refresh with a
+configurable interval dropdown -- Off/2s/5s/10s/30s/60s). No Dockerfile
+changes -- this bump exists purely to trigger a fresh git clone of the
+swatch repo per the 3.2.1-local cache-busting fix.
+
 ## 3.2.4-local
 
 Pull in latest swatch changes (fix color_lower/color_upper being
