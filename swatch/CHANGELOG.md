@@ -1,5 +1,16 @@
 # Versions
 
+## 3.2.16-local
+
+Pull in latest swatch changes (the kitchen-hood audio monitor no
+longer gets fooled by a podcast or other speech/music playing near the
+camera while the fan is running -- spectral flux comparison is now
+restricted to a low-frequency band where the fan's noise concentrates,
+with an energy-floor check so FFT leakage can't be mistaken for a
+steady hum). No Dockerfile changes -- this bump exists purely to
+trigger a fresh git clone of the swatch repo per the 3.2.1-local
+cache-busting fix.
+
 ## 3.2.15-local
 
 Pull in latest swatch changes (dashboard camera snapshots no longer
