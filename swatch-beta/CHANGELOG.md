@@ -1,5 +1,18 @@
 # Versions
 
+## 3.2.17-local
+
+Pull in latest swatch changes (color_variants can now override an
+object's area/shape thresholds per variant -- e.g. a light that
+blooms much larger in-frame at night than during the day can have a
+separate max_area for its night variant instead of missing detection
+entirely; time_range windows spanning midnight, like 22:00-06:00, now
+apply correctly instead of never matching; and camera snapshot
+fetches are hardened against network errors so a hiccup can't
+silently and permanently stop detection for a camera). No Dockerfile
+changes -- this bump exists purely to trigger a fresh git clone of
+the swatch repo per the 3.2.1-local cache-busting fix.
+
 ## 3.2.16-local
 
 Pull in latest swatch changes (the kitchen-hood audio monitor no
