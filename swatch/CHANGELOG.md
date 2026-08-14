@@ -1,5 +1,19 @@
 # Versions
 
+## 3.2.18-local
+
+Pull in latest swatch changes (detection history cleanup no longer
+deletes an object's row while it's still "on", which used to silently
+drop its eventual off-time from /api/detections history; snapshot
+retention no longer deletes today's snapshots right after New Year's
+or leaves Feb 29 snapshots stranded for years in non-leap years; the
+zone= filter on /api/detections now actually matches instead of
+always returning empty; the Color Playground UI no longer crashes the
+mask preview on every slider drag; and a couple of smaller
+correctness/efficiency fixes). No Dockerfile changes -- this bump
+exists purely to trigger a fresh git clone of the swatch repo per the
+3.2.1-local cache-busting fix.
+
 ## 3.2.17-local
 
 Pull in latest swatch changes (color_variants can now override an
