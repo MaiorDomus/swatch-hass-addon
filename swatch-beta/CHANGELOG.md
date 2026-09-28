@@ -1,5 +1,15 @@
 # Versions
 
+## 3.2.19-local
+
+Pull in latest swatch changes (new optional `min_band_level_db` for
+audio monitors: an absolute loudness floor on just the low band, so a
+hood fan is still detected with a video or podcast playing loudly on
+top, and short bass-heavy sounds like a coffee grinder or a video on
+its own don't read as the hood). No Dockerfile changes -- this bump
+exists purely to trigger a fresh git clone of the swatch repo per the
+3.2.1-local cache-busting fix.
+
 ## 3.2.18-local
 
 Pull in latest swatch changes (detection history cleanup no longer
