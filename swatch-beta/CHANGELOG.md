@@ -1,5 +1,11 @@
 # Versions
 
+## 3.2.24-local
+
+Pull in latest swatch changes (voice satellites play a soft rising tone
+when they start listening and a falling one when they stop; turn off
+with `wake_sound` / `done_sound`). No Dockerfile changes.
+
 ## 3.2.23-local
 
 Pull in latest swatch changes (voice satellites: mic audio is held back
