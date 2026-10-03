@@ -1,5 +1,11 @@
 # Versions
 
+## 3.2.25-local
+
+Pull in latest swatch changes (voice satellites: new `wake_word_threshold`
+to make the wake word more sensitive for a camera across the room). No
+Dockerfile changes.
+
 ## 3.2.24-local
 
 Pull in latest swatch changes (voice satellites play a soft rising tone
