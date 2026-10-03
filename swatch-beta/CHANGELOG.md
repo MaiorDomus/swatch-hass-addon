@@ -1,5 +1,12 @@
 # Versions
 
+## 3.2.23-local
+
+Pull in latest swatch changes (voice satellites: mic audio is held back
+until Home Assistant confirms the run, so the first word of a command is
+no longer cut off; replies are downloaded before playing, fixing the
+"Input/output error" every reply was logged with). No Dockerfile changes.
+
 ## 3.2.22-local
 
 Pull in latest swatch changes (voice satellites: new
