@@ -1,5 +1,12 @@
 # Versions
 
+## 3.2.26-local
+
+Pull in latest swatch changes (voice satellites send replies straight to
+the camera instead of through a Protect public-API talkback session,
+which left the speaker humming after every reply; the old way is behind
+`talkback_via_api`). No Dockerfile changes.
+
 ## 3.2.25-local
 
 Pull in latest swatch changes (voice satellites: new `wake_word_threshold`
