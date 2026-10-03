@@ -1,5 +1,12 @@
 # Versions
 
+## 3.2.22-local
+
+Pull in latest swatch changes (voice satellites: new
+`protect.speaker_volume` to set the camera's speaker volume, and the
+"stop" word is now off by default -- the camera hears its own reply and
+the stop model kept cutting replies off). No Dockerfile changes.
+
 ## 3.2.21-local
 
 Pull in latest swatch changes (voice satellites now log in to UniFi
