@@ -1,5 +1,13 @@
 # Versions
 
+## 3.2.21-local
+
+Pull in latest swatch changes (voice satellites now log in to UniFi
+Protect at startup instead of on the first reply, and a playback that
+never finishes is stopped after a time limit -- the first announcement
+after a restart could hang and leave the satellite "busy", failing Home
+Assistant's connection test). No Dockerfile changes.
+
 ## 3.2.20-local
 
 Pull in latest swatch changes (new `voice_satellites`: turns a camera's
