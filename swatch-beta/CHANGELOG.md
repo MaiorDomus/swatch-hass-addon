@@ -1,5 +1,16 @@
 # Versions
 
+## 3.2.20-local
+
+Pull in latest swatch changes (new `voice_satellites`: turns a camera's
+microphone into a Home Assistant Assist satellite with a local wake
+word, served over the ESPHome native API, with replies played on the
+camera's speaker through UniFi Protect talkback; audio monitors and
+voice satellites on the same camera now share one RTSP stream). Also
+publishes port 6053/tcp for a voice satellite's ESPHome API (the
+default `port`; a second satellite would need another port listed in
+this config.yaml). No Dockerfile changes.
+
 ## 3.2.19-local
 
 Pull in latest swatch changes (new optional `min_band_level_db` for

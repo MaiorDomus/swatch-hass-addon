@@ -1,5 +1,5 @@
 name: Swatch
-version: "3.2.19-local"
+version: "3.2.20-local"
 panel_icon: "mdi:palette"
 panel_title: Swatch
 slug: swatch
@@ -14,8 +14,10 @@ ingress_entry: /
 panel_admin: false
 ports:
   4500/tcp: 4500
+  6053/tcp: 6053
 ports_description:
   4500/tcp: API
+  6053/tcp: Voice satellite (ESPHome API for Home Assistant)
 host_network: false
 usb: false
 tmpfs: true
