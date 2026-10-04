@@ -1,5 +1,11 @@
 # Versions
 
+## 3.2.27-local
+
+Pull in latest swatch changes (audio monitors get `quiet_off_seconds`,
+switching off sooner once the hum itself goes quiet while loud but
+unsteady audio still waits out `min_off_seconds`). No Dockerfile changes.
+
 ## 3.2.26-local
 
 Pull in latest swatch changes (voice satellites send replies straight to
