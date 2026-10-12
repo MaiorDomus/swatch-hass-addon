@@ -1,5 +1,12 @@
 # Versions
 
+## 3.2.29-local
+
+Pull in latest swatch changes (voice satellites get
+`listening_light_blinks`, blinking the camera's status light when they
+stop listening, as a silent alternative to `done_sound`). No Dockerfile
+changes.
+
 ## 3.2.28-local
 
 Pull in latest swatch changes (voice satellites can use openWakeWord
