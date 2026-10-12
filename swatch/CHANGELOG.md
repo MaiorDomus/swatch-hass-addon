@@ -1,5 +1,12 @@
 # Versions
 
+## 3.2.28-local
+
+Pull in latest swatch changes (voice satellites can use openWakeWord
+`.onnx` models from `wake_word_dir`, e.g. one trained on your own voice,
+and get `listening_light` to show on the camera's status light that
+they're listening; adds the onnxruntime dependency). No Dockerfile changes.
+
 ## 3.2.27-local
 
 Pull in latest swatch changes (audio monitors get `quiet_off_seconds`,
