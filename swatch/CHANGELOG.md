@@ -4,7 +4,9 @@
 
 Pull in latest swatch changes (audio monitors get `level_band_hz`,
 `tone_band_hz`/`min_tone_prominence_db` and `level_median_seconds`, to
-tell a fan's motor tone apart from TV bass). No Dockerfile changes.
+tell a fan's motor tone apart from TV bass). Dockerfile: Python pinned
+to 3.14 (`python:3-bookworm` moved to 3.15, which onnxruntime has no
+wheels for yet).
 
 ## 3.2.29-local
 
