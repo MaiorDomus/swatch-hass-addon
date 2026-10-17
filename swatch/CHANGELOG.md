@@ -1,5 +1,11 @@
 # Versions
 
+## 3.2.31-local
+
+Pull in latest swatch changes (voice satellites support Home Assistant
+timers: `timer_sound`, `timer_rings`; a finished timer rings on the
+camera speaker).
+
 ## 3.2.30-local
 
 Pull in latest swatch changes (audio monitors get `level_band_hz`,
